@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Post</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+  <div class="container">
+    <h1>Create Post</h1>
+    <form class="page-form" action="/create" method="POST">
+      <label for="title">Title</label>
+      <input id="title" type="text" name="title" required />
+
+      <label for="desc">Description</label>
+      <textarea id="desc" name="desc" required></textarea>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

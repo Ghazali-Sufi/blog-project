@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= post.title %></title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+      <%- include('partials/header.ejs') %>
+  <div class="container">
+    <div class="post-detail-card">
+      <h1><%= post.title %></h1>
+      <p class="post-desc"><%= post.desc %></p>
+      <p class="post-date">Date Published: <i><%= post.date %></i></p>
+
+      <div class="post-actions">
+        <a href="/edit/<%= post.id %>" class="btn btn-light">Edit Post</a>
+
+        <form action="/delete/<%= post.id %>" method="POST" class="inline-form"
+              onsubmit="return confirm('Are you sure you want to delete this post?')">
+          <button type="submit" class="btn btn-danger">Delete Post</button>
+        </form>
+
+        <a href="/" class="btn btn-dark">Back to Home</a>
+      </div>
+    </div>
+  </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

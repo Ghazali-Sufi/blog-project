@@ -1,0 +1,292 @@
+/* ---------- Reset ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ---------- Base ---------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+}
+
+/* brand on left */
+.brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: #111827;
+}
+
+/* nav on right */
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link {
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #374151;
+  text-decoration: none;
+}
+.nav-link:hover {
+  background: #f3f4f6;
+}
+
+/* small create button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #111827;
+  background: #fafafa;
+}
+.btn:hover { background: #f0f0f0; }
+
+.btn.small { padding: 8px 12px; font-size: 13px; }
+.btn-primary { background: #4CAF50; border-color: #4CAF50; color: #fff; }
+.btn-primary:hover { background: #45a049; border-color: #45a049; }
+
+
+/* Headings */
+h1 { color: #333; text-align: center; margin-bottom: 20px; }
+
+/* Links */
+a { color: #333; text-decoration: none; }
+a:hover { color: #4CAF50; }
+
+/* ---------- Create Post button ---------- */
+.create-post { text-align: center; margin-bottom: 30px; }
+
+/* ---------- Posts Grid (index) ---------- */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: stretch; /* make items fill the row height */
+}
+
+/* Each card fills the grid row height and uses flex layout */
+.post-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform .2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.post-card:hover { transform: translateY(-2px); }
+
+/* Title: clamp to 2 lines to keep heights even */
+.post-card h3 {
+  margin-bottom: 10px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;          /* clamp to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.3em * 2);    /* reserve space for 2 lines */
+}
+
+/* Excerpt: clamp to 3 lines */
+.post-card .excerpt {
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;          /* clamp to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.5em * 3);    /* reserve space for 3 lines */
+}
+
+/* Push date to the bottom so footers align */
+.post-card .post-date {
+  font-size: .9rem;
+  color: #999;
+  margin-top: auto;                /* pushes it to bottom */
+}
+
+/* ---------- Page Forms (create/edit only) ---------- */
+/* Apply card styling only to full-page forms */
+.page-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+/* Make non page forms (like the small delete form) plain */
+form:not(.page-form) {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  display: inline;
+}
+.inline-form { display: inline; }
+
+/* Controls inside page forms */
+.page-form label { display: block; margin-bottom: 8px; font-size: 16px; color: #555; }
+.page-form input[type="text"], .page-form textarea {
+  width: 100%; padding: 10px; margin-bottom: 20px;
+  border-radius: 4px; border: 1px solid #ddd; font-size: 16px;
+}
+.page-form textarea { height: 150px; }
+.page-form input[type="submit"] {
+  width: 100%; background: #4CAF50; border: none; padding: 10px 0;
+  color: #fff; cursor: pointer; font-size: 18px; border-radius: 4px;
+}
+.page-form input[type="submit"]:hover { background: #45a049; }
+
+/* ---------- Button System ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid #e5e7eb;
+  background: #fafafa;
+  color: #111827;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+  box-shadow: none;
+}
+.btn:hover { background: #f0f0f0; color: inherit; }
+
+/* Button variants */
+.btn-primary { background: #4CAF50; border-color: #4CAF50; color: #fff; }
+.btn-primary:hover { background: #45a049; border-color: #45a049; }
+
+.btn-light   { background: #f3f4f6; border-color: #e5e7eb; color: #111827; }
+.btn-light:hover { background: #e9eaee; }
+
+.btn-danger  { background: #ef4444; border-color: #ef4444; color: #fff; }
+.btn-danger:hover { background: #dc2626; border-color: #dc2626; }
+
+.btn-dark    { background: #1f2937; border-color: #1f2937; color: #fff; }
+.btn-dark:hover { background: #111827; border-color: #111827; color: rgb(214, 166, 166); }
+
+/* Actions row on detail page */
+.post-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ---------- Post Detail Card ---------- */
+.post-detail-card {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.post-detail-card h1 { font-size: 2rem; margin-bottom: 20px; color: #333; }
+.post-desc { font-size: 1.1rem; color: #555; line-height: 1.6; margin-bottom: 20px; }
+.post-detail-card .post-date { font-size: .9rem; color: #999; margin-bottom: 24px; }
+
+#mghazali{
+    color: blue;
+}
+#mghazali:hover{
+    text-decoration: underline;
+}
+footer{
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* ---------- About Page ---------- */
+.about-hero {
+  text-align: center;
+  margin: 40px auto 24px;
+  max-width: 780px;
+}
+.avatar {
+  width: 84px; height: 84px; margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #111827; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 28px;
+}
+.about-hero h1 { font-size: 2rem; margin-bottom: 8px; }
+.tagline { color: #555; max-width: 700px; margin: 0 auto 14px; }
+.about-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.badge {
+  padding: 6px 10px; border-radius: 999px;
+  background: #eef2ff; color: #1f2937; font-size: 12px; border: 1px solid #e5e7eb;
+}
+
+.about-grid {
+  display: grid; gap: 20px; margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.about-card {
+  background: #fff; padding: 22px; border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.about-card h2 { font-size: 1.2rem; margin-bottom: 10px; }
+.about-card p { color: #555; }
+.highlights { list-style: none; margin-top: 6px; }
+.highlights li { padding: 6px 0; color: #444; }
+
+.about-cta {
+  display: flex; gap: 12px; justify-content: center;
+  margin: 28px 0 10px;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .posts { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+@media (max-width: 600px) {
+  h1 { font-size: 1.8rem; }
+  .post-detail-card { padding: 20px; }
+  .btn { width: 100%; }
+    .about-cta { flex-direction: column; }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Website</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+  <div class="container">
+    <h1>Blog Posts</h1>
+
+    <!-- Centered Create Post Button -->
+    <div class="create-post">
+      <a href="/form" class="btn btn-primary">Create Post +</a>
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="posts">
+      <% if (locals.post && post.length > 0) { %>
+        <% post.forEach((p) => { %>
+            <a href="/postDetail/<%= p.id %>">
+          <article class="post-card">
+            <h3><%= p.title %></h3>
+
+            <p class="excerpt">
+              <%= p.desc.split(' ').slice(0, 20).join(' ') %><% if (p.desc.split(' ').length > 20) { %>...<% } %>
+            </p>
+
+            <p class="post-date">Published: <i><%= p.date %></i></p>
+          </article>
+          </a>
+        <% }) %>
+      <% } else { %>
+        <h2>No posts. Create a Post</h2>
+      <% } %>
+    </div>
+  </div>
+  <%- include('partials/footer') %>
+</body>
+</html>

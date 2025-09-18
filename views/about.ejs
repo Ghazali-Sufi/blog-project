@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Mohamed Ghazali</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="avatar">MG</div>
+      <h1>Mohamed Ghazali</h1>
+      <p class="tagline">
+        Developer, problem solver, and lifelong learner.
+        I enjoy building simple, useful web apps with clean code and clear UX.
+      </p>
+
+      <div class="about-badges">
+        <span class="badge">JavaScript</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">Express</span>
+        <span class="badge">React</span>
+        <span class="badge">NextJS</span>
+        <span class="badge">Databases</span>
+        <span class="badge">API's</span>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="about-grid">
+      <article class="about-card">
+        <h2>About</h2>
+        <p>
+          Hi, I’m <strong>Mohamed Ghazali</strong>. I like building
+          focused projects that do one thing well. I care about readable code,
+          simple interfaces, and fast feedback loops. When I’m not coding,
+          I’m usually reading docs, sketching ideas, or learning something new.
+        </p>
+      </article>
+
+      <article class="about-card">
+        <h2>Highlights</h2>
+        <ul class="highlights">
+          <li>Builds full-stack apps with Node.js, Express, and EJS</li>
+          <li>Keeps UI minimal and accessible</li>
+          <li>Enjoys refactoring and clean architecture</li>
+          <li>Comfortable with CSS layouts (Grid & Flexbox)</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <a href="/" class="btn btn-dark">View Posts</a>
+      <a href="/form" class="btn btn-primary">Create a Post</a>
+    </section>
+  </main>
+  <%- include('partials/footer.ejs') %>
+</body>
+</html>
